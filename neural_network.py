@@ -5,7 +5,7 @@ from termcolor import colored
 
 class NeuralNetwork:
     def __init__(self):
-        self.weights = 3 * np.random.random((4, 1)) - 1
+        self.weights = 3 * np.random.random((3, 1)) - 1
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
     def sigmoid_derivative(self, x):
@@ -30,7 +30,6 @@ if __name__ == "__main__":
         [1, 1, 1],
         [1, 0, 1],
         [0, 1, 1],
-        [0, 1, 0],
     ])
 
     training_outputs = np.array([[0, 1, 1, 0]]).T
