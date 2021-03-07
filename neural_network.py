@@ -2,7 +2,7 @@ import numpy as np
 
 class NeuralNetwork:
     def __init__(self):
-        self.weights = 2 * np.random.random((64, 4)) - 1
+        self.weights = 2 * np.random.random((16, 4)) - 1
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
     def sigmoid_derivative(self, y):
@@ -18,9 +18,6 @@ class NeuralNetwork:
         output = self.sigmoid(np.dot(inputs, self.weights))
         return output
     def save(self):
-        np.save("shape_classifier.npy", self.weights)
-    def load(self):
-        self.weights = np.load("shape_classifier.npy")
         np.save("model.npy", self.weights)
     def load(self):
         self.weights = np.load("model.npy")
