@@ -1,8 +1,8 @@
 import numpy as np
 
 class NeuralNetwork:
-    def __init__(self):
-        self.weights = 2 * np.random.random((16, 4)) - 1
+    def __init__(self, dimensions):
+        self.weights = 2 * np.random.random((dimensions*dimensions, 4)) - 1
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
     def sigmoid_derivative(self, y):
